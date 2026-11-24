@@ -1,0 +1,19 @@
+{
+  "name": "ship-it-by-noon",
+  "version": "1.0.0",
+  "description": "INFO 430: build your own database web app with an AI assistant",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "check": "node scripts/check-connection.js",
+    "create-db": "node scripts/create-database.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "mssql": "^11.0.1"
+  }
+}
