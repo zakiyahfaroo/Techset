@@ -74,7 +74,7 @@ const demand = {
        Tableau: .3, 'Power BI': .2, Statistics: .2, 'LLM APIs': .08 }
 };
 
-const baseSalary = { 1: 88000, 2: 138000, 3: 168000, 4: 178000, 5: 148000, 6: 128000 };
+const baseSalary = { 1: 76000, 2: 120000, 3: 145000, 4: 152000, 5: 128000, 6: 110000 };
 const cityPay = { Seattle: 1.1, 'San Francisco': 1.2, 'New York': 1.15, Austin: 0.95, Chicago: 0.95, Remote: 1.0 };
 const levelPay = { Junior: 0.78, Mid: 1.0, Senior: 1.3 };
 const cities = Object.keys(cityPay);
@@ -90,7 +90,7 @@ const postings = [];
 const postingSkills = [];
 let id = 1;
 for (const [roleId, roleName] of roles) {
-  for (let i = 0; i < 16; i++, id++) {
+  for (let i = 0; i < 24; i++, id++) {
     const level = pick(['Junior', 'Mid', 'Mid', 'Senior', 'Senior']);
     const city = pick(cities);
     const mode = city === 'Remote' ? 'Remote' : pick(['Hybrid', 'Hybrid', 'Onsite', 'Remote']);
@@ -102,7 +102,7 @@ for (const [roleId, roleName] of roles) {
 
     // GenAI skills carry a pay premium in this (made-up) market.
     const aiCount = unique.filter(s => genAi.has(s)).length;
-    const mid = baseSalary[roleId] * cityPay[city] * levelPay[level] * (1 + 0.035 * aiCount) * (0.92 + rand() * 0.16);
+    const mid = baseSalary[roleId] * cityPay[city] * levelPay[level] * (1 + 0.05 * aiCount) * (0.92 + rand() * 0.16);
     const lo = Math.round(mid * 0.88 / 1000) * 1000;
     const hi = Math.round(mid * 1.12 / 1000) * 1000;
 

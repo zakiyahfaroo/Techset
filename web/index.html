@@ -234,7 +234,7 @@
         <td><b>${esc(r.title)}</b><div class="muted">Posted ${esc(String(r.posted_date).slice(0, 10))}</div></td>
         <td>${esc(r.company_name)}<div class="muted">${esc(r.industry)}</div></td>
         <td>${esc(r.city)}<div class="muted">${esc(r.work_mode)}</div></td>
-        <td>${money(r.salary_min)}–${money(r.salary_max)}</td>
+        <td style="white-space:nowrap">${money(r.salary_min)}–${money(r.salary_max)}</td>
         <td><div class="match"><div class="track"><div class="fill" style="width:${r.match_pct}%"></div></div><span class="muted">${r.skills_matched}/${r.skills_total}</span></div></td>
         <td class="missing">${r.missing_skills ? esc(r.missing_skills) : '<span style="color:var(--good)">Nothing: apply!</span>'}</td>
       </tr>`).join('')
