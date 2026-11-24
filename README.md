@@ -1,3 +1,26 @@
+# Techset: the skills the data & AI job market wants
+
+Techset is a full-stack analytics app for students heading into data and AI careers. Pick a target role (Data Analyst through AI / LLM Engineer) and the skills you already have, and it shows you:
+
+- **Most-demanded skills** for that role: the share of postings that ask for each skill and what those postings pay
+- **Learn next**: the highest-demand skills you're missing
+- **GenAI pay premium**: how much more postings that ask for RAG, vector databases, AI agents, LLM evals or MCP pay
+- **Your best-matching postings**, with the skills each one is missing
+
+**Stack:** HTML/CSS/JavaScript → Node.js + Express REST API → Microsoft SQL Server (T-SQL: CTEs, `STRING_SPLIT`, `STRING_AGG ... WITHIN GROUP`, parameterized queries). The data is a normalized 5-table schema (`roles`, `companies`, `skills`, `job_postings`, `posting_skills`) filled with realistic, seeded sample data from fictional companies.
+
+```
+npm install
+cp .env.example .env      # fill in DB_PASSWORD and DB_NAME
+npm run create-db && npm run check
+node db/load.js           # creates the tables and loads the sample data
+npm start                 # http://localhost:3000
+```
+
+Built for INFO 430 (Database Systems) at the UW iSchool. The original assignment instructions follow.
+
+---
+
 # Ship It by Noon: The one-hour Database App
 
 You will build a small, real web app from your own idea, starting from an empty folder, by directing an AI coding assistant. Nothing in this repository is an app: it holds only **places for things** and **the rules your AI follows**, plus the location of the class database. The idea is yours, the code comes from you directing the AI, and you run it, check it, and fix it.
